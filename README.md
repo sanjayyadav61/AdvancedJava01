@@ -1,6 +1,6 @@
 # Advanced Java Lab Projects
 
-Java lab projects: Swing apps, Sockets, RMI, and JDBC. Requires **JDK** (tested on JDK 26); MySQL needed only for the JDBC project.
+Java lab projects: Swing apps, Sockets, RMI, JDBC, and a webapp. Requires **JDK** (tested on JDK 26); MySQL needed only for the JDBC project. Tomcat is required for Experiment 6.
 
 ## Projects
 
@@ -47,6 +47,15 @@ Connects to MySQL (`college` DB), inserts a row into `student`. Needs a running 
 cd "Mysql Connect/jdbc"
 javac -cp "lib/mysql-connector-j-26.7.0.jar" -d bin src/App.java
 java  -cp "bin;lib/mysql-connector-j-26.7.0.jar" App
+```
+
+### 6. Student Registration Form (Webapp)
+A web-based student registration form using plain HTML/CSS/JS, deployed under Tomcat.
+
+```bash
+# Place under Tomcat webapps, then start Tomcat
+# Access at:
+http://localhost:8080/studentform/
 ```
 
 ## License
