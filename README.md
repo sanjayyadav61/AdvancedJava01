@@ -18,8 +18,8 @@ Student registration form with Name/Roll/Branch fields, gender radio buttons, te
 
 ```bash
 cd "Registration Form"
-javac aniket.java
-java aniket
+javac sanjay.java
+java sanjay
 ```
 
 ### 3. RMI
