@@ -63,10 +63,34 @@ A Maven-based web app with a login form, session handling, auth filter, and life
 
 ```bash
 cd "EXP7/servlet"
-mvn clean package           # produces servlet.war
-# Copy target/servlet.war to Tomcat webapps, then start Tomcat:
-http://localhost:8080/servlet/  -> login (admin / admin123) -> home
+
+# 1. Build WAR (requires Maven)
+mvn clean package
+
+# 2. Deploy WAR to Tomcat 11
+# Copy WAR to Tomcat webapps directory
+copy target\servlet.war "%CATALINA_HOME%\webapps\servlet.war"
+
+# 3. Start Tomcat
+# Windows
+%CATALINA_HOME%\bin\startup.bat
+
+# Or Linux/macOS
+# $CATALINA_HOME/bin/startup.sh
+
+# 4. Access the app
+# Login: http://localhost:8080/servlet/
+# Credentials: admin / 1234
 ```
+
+**Files created:**
+- `HelloServlet.java` — `@WebServlet("/hello")` demo
+- `LoginServlet.java` — `@WebServlet("/login")` handles POST login
+- `HomeServlet.java` — `@WebServlet("/home")` protected resource
+- `AuthFilter.java` — `@WebFilter("/home")` session check
+- `AppListener.java` — `@WebListener` context + session lifecycle
+- `index.html` — login form (username/password)
+- `web.xml` — deployment descriptor
 
 ## License
 MIT
