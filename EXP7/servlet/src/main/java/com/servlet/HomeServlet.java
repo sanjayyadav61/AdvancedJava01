@@ -13,15 +13,11 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        HttpSession session = request.getSession(false);
+        String username = (String) session.getAttribute("username");
         PrintWriter out = response.getWriter();
-
-        String user = (String) request.getAttribute("user");
-        if (user == null) {
-            user = "Guest";
-        }
-
-        out.println("<h1>Welcome, " + user + "!</h1>");
-        out.println("<p>This is the Home Page after successful login.</p>");
-        out.println("<a href=\"logout\">Logout</a>");
+        out.println("<h1>Student Home</h1>");
+        out.println("<h2>Welcome " + username + "</h2>");
+        out.println("<a href='logout'>Logout</a>");
     }
 }

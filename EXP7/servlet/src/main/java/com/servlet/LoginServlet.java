@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 public class LoginServlet extends HttpServlet {
 
     private static final String USERNAME = "admin";
-    private static final String PASSWORD = "admin123";
+    private static final String PASSWORD = "1234";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -23,12 +23,11 @@ public class LoginServlet extends HttpServlet {
 
         if (USERNAME.equals(username) && PASSWORD.equals(password)) {
             HttpSession session = request.getSession();
-            session.setAttribute("user", username);
-            response.sendRedirect("home");
+            session.setAttribute("username", username);
+            out.println("<h1>Login Successful</h1>");
+            out.println("<a href='home'>Go to Home</a>");
         } else {
-            out.println("<h1>Login Failed</h1>");
-            out.println("<p>Invalid username or password.</p>");
-            out.println("<a href=\"index.html\">Try Again</a>");
+            out.println("<h1>Invalid Login</h1>");
         }
     }
 
