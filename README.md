@@ -58,5 +58,15 @@ A web-based student registration form using plain HTML/CSS/JS, deployed under To
 http://localhost:8080/studentform/
 ```
 
+### 7. Servlet Login App (Jakarta EE / Maven)
+A Maven-based web app with a login form, session handling, auth filter, and lifecycle listeners (Tomcat 11 / Jakarta Servlet 6.1).
+
+```bash
+cd "EXP7/servlet"
+mvn clean package           # produces servlet.war
+# Copy target/servlet.war to Tomcat webapps, then start Tomcat:
+http://localhost:8080/servlet/  -> login (admin / admin123) -> home
+```
+
 ## License
 MIT
