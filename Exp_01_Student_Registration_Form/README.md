@@ -15,8 +15,7 @@ Java, Swing, event handling.
 Open a terminal in this folder and run:
 
 ```bash
-javac aniket.java
-java aniket
+javac sanjay.java
+java sanjay
 ```
 
-If the main class or file name has changed, use the correct name from the source code.
