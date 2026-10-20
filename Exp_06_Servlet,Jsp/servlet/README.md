@@ -1,4 +1,4 @@
-# Experiment 07: Java Servlets and JSP
+# Experiment 06: Java Servlets and JSP
 
 ## Aim
 To develop and run a Java web application using Servlets and JavaServer Pages (JSP).
