@@ -1,0 +1,270 @@
+/* ====================================================================
+   SHOPSPHERE - Modern E-Commerce Design System & Stylesheet
+   Built for RTU Advanced Java Capstone Project
+   ==================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+    --secondary: #64748b;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --dark: #0f172a;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+    --border: #e2e8f0;
+    --border-light: #f1f5f9;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: var(--font-sans);
+    color: #1e293b;
+    background-color: var(--surface-alt);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Navbar */
+.navbar-brand-badge {
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #334155;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary);
+}
+
+.search-bar-input {
+    border-radius: 50rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: #f1f5f9;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.search-bar-input:focus {
+    background-color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Hero Section */
+.hero-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #1e293b 100%);
+    color: white;
+    border-radius: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Product Cards */
+.product-card {
+    border-radius: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: var(--surface);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.product-thumb {
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-thumb {
+    transform: scale(1.05);
+}
+
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Category Cards */
+.category-card {
+    border-radius: 1rem;
+    transition: all 0.2s ease;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.category-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.category-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Cart & Checkout Elements */
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.order-summary-card {
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+/* Admin Dashboard Specific */
+.admin-sidebar {
+    background-color: #0f172a;
+    min-height: calc(100vh - 70px);
+}
+
+.admin-nav-item {
+    color: #94a3b8;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.admin-nav-item:hover, .admin-nav-item.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.metric-stat-card {
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-stat-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+}
+
+.metric-stat-card.revenue::before { background-color: var(--success); }
+.metric-stat-card.orders::before { background-color: var(--primary); }
+.metric-stat-card.products::before { background-color: var(--warning); }
+.metric-stat-card.users::before { background-color: #8b5cf6; }
+
+/* Status Badges */
+.badge-status-placed { background-color: #dbeafe; color: #1e40af; }
+.badge-status-confirmed { background-color: #e0e7ff; color: #4338ca; }
+.badge-status-shipped { background-color: #fef3c7; color: #92400e; }
+.badge-status-delivered { background-color: #d1fae5; color: #065f46; }
+.badge-status-cancelled { background-color: #fee2e2; color: #991b1b; }
+
+/* Timeline for Order Details */
+.timeline-step {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 28px;
+    bottom: 0;
+    width: 2px;
+    background-color: #e2e8f0;
+}
+
+.timeline-step:last-child::before {
+    display: none;
+}
+
+.timeline-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-step.completed .timeline-icon {
+    background-color: var(--success);
+    color: white;
+}
+
+.timeline-step.current .timeline-icon {
+    background-color: var(--primary);
+    color: white;
+}
+
+.timeline-step.pending .timeline-icon {
+    background-color: #e2e8f0;
+    color: #64748b;
+}
+
+/* Code Snippet Box for Syllabus Demos */
+.code-preview-box {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+}

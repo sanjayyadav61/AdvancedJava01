@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ShopSphere Product Feed" version="1.0">
+    <product id="101" category="Electronics">
+        <name>Apple MacBook Air M3</name>
+        <brand>Apple</brand>
+        <price>114900.00</price>
+        <stock>15</stock>
+        <rating>4.9</rating>
+    </product>
+    <product id="102" category="Electronics">
+        <name>Sony WH-1000XM5</name>
+        <brand>Sony</brand>
+        <price>26990.00</price>
+        <stock>24</stock>
+        <rating>4.8</rating>
+    </product>
+    <product id="103" category="Fashion">
+        <name>Nike Air Zoom Pegasus 40</name>
+        <brand>Nike</brand>
+        <price>8995.00</price>
+        <stock>18</stock>
+        <rating>4.6</rating>
+    </product>
+    <product id="104" category="Books">
+        <name>Core Java: Advanced Features</name>
+        <brand>Cay Horstmann</brand>
+        <price>950.00</price>
+        <stock>50</stock>
+        <rating>5.0</rating>
+    </product>
+</catalog>
